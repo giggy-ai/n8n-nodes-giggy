@@ -27,7 +27,6 @@ jobs:
             test "$GITHUB_REF_NAME" = "v$(node -p 'require("./package.json").version')"
           fi
       - name: Publish with provenance
-        run: npm publish --provenance --access public
+        run: npx --yes npm@12.2.0 publish --provenance --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           RELEASE_MODE: 'true'
