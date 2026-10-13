@@ -1,0 +1,88 @@
+{
+  "active": false,
+  "name": "Giggy — Generate a Batch voiceover",
+  "pinData": {},
+  "nodes": [
+    {
+      "name": "When clicking Execute workflow",
+      "typeVersion": 1,
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        0,
+        0
+      ],
+      "id": "manual-trigger"
+    },
+    {
+      "name": "Find an English Voice",
+      "typeVersion": 1,
+      "parameters": {
+        "limit": 1,
+        "simplify": true,
+        "resource": "voice",
+        "filters": {
+          "language": "English"
+        },
+        "returnAll": false,
+        "voiceSource": "public",
+        "operation": "getMany"
+      },
+      "type": "n8n-nodes-giggy.giggy",
+      "position": [
+        240,
+        0
+      ],
+      "id": "discover-voice"
+    },
+    {
+      "name": "Generate Voiceover",
+      "typeVersion": 1,
+      "parameters": {
+        "voiceId": {
+          "value": "={{ $json.voice_id }}",
+          "mode": "id"
+        },
+        "resource": "speech",
+        "text": "Hello from Giggy. This audio was generated in n8n.",
+        "mode": "batch",
+        "options": {},
+        "voiceSource": "public",
+        "operation": "generate"
+      },
+      "type": "n8n-nodes-giggy.giggy",
+      "position": [
+        480,
+        0
+      ],
+      "id": "generate-speech"
+    }
+  ],
+  "connections": {
+    "Find an English Voice": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "type": "main",
+            "node": "Generate Voiceover"
+          }
+        ]
+      ]
+    },
+    "When clicking Execute workflow": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "type": "main",
+            "node": "Find an English Voice"
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
