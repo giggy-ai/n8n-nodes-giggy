@@ -71,7 +71,7 @@ npm test
 npm pack --dry-run
 ```
 
-The maintained test suite covers payloads, binary output, pagination, item linking, credential masking, idempotency, Unicode limits, validation, and explicit failure behavior. Live n8n execution qualification is recorded separately before release. A programmatic node is used to validate MP3 responses, prepare n8n-managed binary data, and aggregate paginated voice requests.
+The maintained test suite covers payloads, binary output, pagination, item linking, credential masking, idempotency, Unicode limits, validation, and explicit failure behavior. Tested in n8n 2.43.4 with live public-voice discovery and successful Batch and Fast generation, including n8n-managed MP3 binary output. A programmatic node is used to validate MP3 responses, prepare n8n-managed binary data, and aggregate paginated voice requests.
 
 ## Release and verification
 
