@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-giggy",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Official Giggy text-to-speech and voice catalog nodes for n8n",
   "license": "MIT",
   "homepage": "https://github.com/giggy-ai/n8n-nodes-giggy",
