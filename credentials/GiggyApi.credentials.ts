@@ -29,6 +29,6 @@ export class GiggyApi implements ICredentialType {
 		properties: { headers: { 'xi-api-key': '={{$credentials.apiKey}}' } },
 	};
 	test: ICredentialTestRequest = {
-		request: { baseURL: 'https://giggy.ai/v1', url: '/voices', method: 'GET', qs: { limit: 1 } },
+		request: { baseURL: 'https://api.giggy.ai/v1', url: '/voices', method: 'GET', qs: { limit: 1 } },
 	};
 }

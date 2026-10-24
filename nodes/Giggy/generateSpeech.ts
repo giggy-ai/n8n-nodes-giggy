@@ -40,7 +40,7 @@ export async function generateSpeech(
 		);
 	const response = (await this.helpers.httpRequestWithAuthentication.call(this, 'giggyApi', {
 		method: 'POST',
-		url: 'https://giggy.ai/v1/text-to-speech',
+		url: 'https://api.giggy.ai/v1/text-to-speech',
 		body: {
 			text,
 			voice_id: voiceId,

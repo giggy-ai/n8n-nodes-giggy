@@ -17,7 +17,7 @@ n8n Cloud availability requires n8n verification. This package has not yet been 
 3. In n8n, add a **Giggy API** credential and paste your API key into the masked field.
 4. Test the credential. The test requests one public voice; it does not generate speech or consume generation credits.
 
-n8n encrypts credentials at rest. The node sends your key only through n8n's authenticated HTTP helper to `https://giggy.ai/v1`. Do not place keys in workflow text, exports, or public repositories. An API key uses its existing Personal or Workspace Entity for resource access and billing.
+n8n encrypts credentials at rest. The node sends your key only through n8n's authenticated HTTP helper to `https://api.giggy.ai/v1`. Do not place keys in workflow text, exports, or public repositories. An API key uses its existing Personal or Workspace Entity for resource access and billing.
 
 ## Operations
 
@@ -80,7 +80,7 @@ The public source is [giggy-ai/n8n-nodes-giggy](https://github.com/giggy-ai/n8n-
 ## Resources
 
 - [Giggy Speech API documentation](https://giggy.ai/docs/speech-api)
-- [Live OpenAPI contract](https://giggy.ai/v1/openapi.json)
+- [Live OpenAPI contract](https://api.giggy.ai/v1/openapi.json)
 - [Giggy examples](https://github.com/giggy-ai/giggy-examples)
 - [n8n verification guidelines](https://docs.n8n.io/connect/create-nodes/build-your-node/reference/verification-guidelines/)
 

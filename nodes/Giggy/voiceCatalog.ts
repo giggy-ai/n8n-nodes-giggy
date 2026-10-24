@@ -21,7 +21,7 @@ export async function getVoicePage(
 ): Promise<Voice[]> {
 	const response = (await this.helpers.httpRequestWithAuthentication.call(this, 'giggyApi', {
 		method: 'GET',
-		url: `https://giggy.ai/v1/${source === 'custom' ? 'my-voices' : 'voices'}`,
+		url: `https://api.giggy.ai/v1/${source === 'custom' ? 'my-voices' : 'voices'}`,
 		qs: { offset, limit, ...(source === 'public' ? filters : {}) },
 		json: true,
 		timeout: 30000,
