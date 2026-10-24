@@ -30,7 +30,7 @@ test('credentials are masked and authenticate only against the public API', () =
   const credential = new GiggyApi();
   assert.equal(credential.properties[0].typeOptions.password, true);
   assert.equal(credential.authenticate.properties.headers['xi-api-key'], '={{$credentials.apiKey}}');
-  assert.equal(credential.test.request.baseURL, 'https://giggy.ai/v1');
+  assert.equal(credential.test.request.baseURL, 'https://api.giggy.ai/v1');
 });
 test('Batch returns an MP3 binary, input JSON, trace metadata, and item pairing', async () => {
   const ctx = context(); const [result] = await node.execute.call(ctx);
@@ -92,7 +92,7 @@ test('A later catalog failure emits no partial successful page', async () => {
 });
 test('Custom voice search uses the owned-voice endpoint and supports nullable names', async () => {
   const ctx = context({ voiceSource: 'custom' }, [{ voices: [{ voice_id: voiceId, name: null }] }]);
-  const result = await searchVoices.call(ctx); assert.equal(ctx.calls[0].url, 'https://giggy.ai/v1/my-voices');
+  const result = await searchVoices.call(ctx); assert.equal(ctx.calls[0].url, 'https://api.giggy.ai/v1/my-voices');
   assert.deepEqual(result.results, [{ name: voiceId, value: voiceId }]);
 });
 test('Full catalog output preserves fields when Simplify is disabled', async () => {
